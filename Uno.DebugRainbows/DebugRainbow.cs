@@ -33,16 +33,37 @@ namespace Uno.DebugRainbows
 
 		private static void OnShowColorsChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
 		{
-			var uiElement = dependencyObject as UIElement;
-			if ((bool)args.NewValue)
+#if DEBUG
+			if (dependencyObject is FrameworkElement fe)
 			{
-				IterateChildren(uiElement);
+				if ((bool)args.NewValue)
+				{                   
+					fe.Loaded += Element_Loaded; 
+				}
+				else
+                {
+					fe.Loaded -= Element_Loaded;
+                }
 			}
+#endif
 		}
 
-		private static void IterateChildren(UIElement element)
+		private static void Element_Loaded(object sender, RoutedEventArgs e)
 		{
-			if (element is Panel panel)
+#if DEBUG
+			IterateChildren(sender as UIElement);
+#endif
+		}
+
+        private static void IterateChildren(UIElement element)
+		{
+			if (element is Page page)
+            {
+				page.Background = GetRandomColor();
+
+				IterateChildren(page.Content as UIElement);
+            }
+			else if (element is Panel panel)
 			{
 				panel.Background = GetRandomColor();
 
@@ -51,15 +72,36 @@ namespace Uno.DebugRainbows
 					IterateChildren(child);
 				}
 			}
+#if HAS_UNO
 			else if (element is FrameworkElement fe)
 			{
 				fe.Background = GetRandomColor();
 			}
+#else
+			else if (element is Control control)
+            {
+				control.Background = GetRandomColor();
+            }
+#endif
 		}
 
 		private static Brush GetRandomColor()
 		{
-			return SolidColorBrushHelper.FromARGB(255, (byte)_randomGen.Next(0, 255), (byte)_randomGen.Next(0, 255), (byte)_randomGen.Next(0, 255))
+#if !HAS_UNO
+			return new SolidColorBrush(new Windows.UI.Color() { 
+				A = 255, 
+				R = (byte)_randomGen.Next(0, 255), 
+				B = (byte)_randomGen.Next(0, 255), 
+				G = (byte)_randomGen.Next(0, 255) 
+			});
+#else
+			return SolidColorBrushHelper
+				.FromARGB(
+				255, 
+				(byte)_randomGen.Next(0, 255), 
+				(byte)_randomGen.Next(0, 255), 
+				(byte)_randomGen.Next(0, 255));
+#endif
 		}
 	}
 }
