@@ -22,9 +22,27 @@ namespace DebugRainbowsSample
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+
+        public bool IsTomato
+        {
+            get { return (bool)GetValue(IsTomatoProperty); }
+            set { SetValue(IsTomatoProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for IsTomato.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsTomatoProperty =
+            DependencyProperty.Register("IsTomato", typeof(bool), typeof(MainPage), new PropertyMetadata(false));
+
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            IsTomato = true;
         }
     }
 }

@@ -151,7 +151,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Uno.DebugRainbows\Uno.DebugRainbows.csproj">
+    <ProjectReference Include="..\..\..\src\Uno.DebugRainbows\Uno.DebugRainbows.csproj">
       <Project>{ce807820-7f65-47e2-b811-12eae82db416}</Project>
       <Name>Uno.DebugRainbows</Name>
     </ProjectReference>

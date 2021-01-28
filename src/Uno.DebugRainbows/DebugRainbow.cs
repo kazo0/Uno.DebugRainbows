@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
@@ -12,6 +13,7 @@ namespace Uno.DebugRainbows
 	{
 
 		private static readonly Random _randomGen = new Random();
+		private static bool _tomatoTime = false;
 
 		public static bool GetShowColors(DependencyObject obj)
 		{
@@ -31,7 +33,31 @@ namespace Uno.DebugRainbows
 				typeof(UIElement),
 				new PropertyMetadata(false, OnShowColorsChanged));
 
-		private static void OnShowColorsChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+
+
+        public static bool GetTomato(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(TomatoProperty);
+        }
+
+        public static void SetTomato(DependencyObject obj, bool value)
+        {
+            obj.SetValue(TomatoProperty, value);
+        }
+
+        // Using a DependencyProperty as the backing store for Tomato.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TomatoProperty =
+            DependencyProperty.RegisterAttached("Tomato", typeof(bool), typeof(UIElement), new PropertyMetadata(false, OnTomatoChanged));
+
+        private static void OnTomatoChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+        {
+#if DEBUG
+			_tomatoTime = (bool)args.NewValue;
+			IterateChildren(dependencyObject as UIElement);
+#endif
+		}
+
+        private static void OnShowColorsChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
 		{
 #if DEBUG
 			if (dependencyObject is FrameworkElement fe)
@@ -59,13 +85,13 @@ namespace Uno.DebugRainbows
 		{
 			if (element is Page page)
             {
-				page.Background = GetRandomColor();
+				page.Background = GetColor();
 
 				IterateChildren(page.Content as UIElement);
             }
 			else if (element is Panel panel)
 			{
-				panel.Background = GetRandomColor();
+				panel.Background = GetColor();
 
 				foreach (var child in panel.Children)
 				{
@@ -75,18 +101,26 @@ namespace Uno.DebugRainbows
 #if HAS_UNO
 			else if (element is FrameworkElement fe)
 			{
-				fe.Background = GetRandomColor();
+				fe.Background = GetColor();
 			}
 #else
 			else if (element is Control control)
             {
-				control.Background = GetRandomColor();
+				control.Background = GetColor();
             }
 #endif
 		}
 
-		private static Brush GetRandomColor()
+		private static Brush GetColor()
 		{
+			if (_tomatoTime)
+            {
+#if !HAS_UNO
+				return new SolidColorBrush(Colors.Tomato);
+#else
+				return SolidColorBrushHelper.Tomato;
+#endif
+			}
 #if !HAS_UNO
 			return new SolidColorBrush(new Windows.UI.Color() { 
 				A = 255, 

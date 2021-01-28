@@ -9,37 +9,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{5853A0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{62DD2681-4802-4B91-8AEE-006D9AB500D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.Droid", "Sample\DebugRainbowsSample\DebugRainbowsSample.Droid\DebugRainbowsSample.Droid.csproj", "{4CAD0C7B-086D-4F8C-B45E-BD43B57C4969}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.Droid", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Droid\DebugRainbowsSample.Droid.csproj", "{4CAD0C7B-086D-4F8C-B45E-BD43B57C4969}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.iOS", "Sample\DebugRainbowsSample\DebugRainbowsSample.iOS\DebugRainbowsSample.iOS.csproj", "{F2E867E6-16E8-463D-827E-31E0265BC6F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.iOS", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.iOS\DebugRainbowsSample.iOS.csproj", "{F2E867E6-16E8-463D-827E-31E0265BC6F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.UWP", "Sample\DebugRainbowsSample\DebugRainbowsSample.UWP\DebugRainbowsSample.UWP.csproj", "{04FED75E-7534-4565-ADEC-4187A5FF96CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.UWP", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.UWP\DebugRainbowsSample.UWP.csproj", "{04FED75E-7534-4565-ADEC-4187A5FF96CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Wasm", "Sample\DebugRainbowsSample\DebugRainbowsSample.Wasm\DebugRainbowsSample.Wasm.csproj", "{7150970F-B94E-42E2-8C77-6026CB14D664}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Wasm", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Wasm\DebugRainbowsSample.Wasm.csproj", "{7150970F-B94E-42E2-8C77-6026CB14D664}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.macOS", "Sample\DebugRainbowsSample\DebugRainbowsSample.macOS\DebugRainbowsSample.macOS.csproj", "{D8D6B996-64ED-440D-9CDB-B4B685584D30}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DebugRainbowsSample.macOS", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.macOS\DebugRainbowsSample.macOS.csproj", "{D8D6B996-64ED-440D-9CDB-B4B685584D30}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Wpf.Host", "Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Wpf.Host\DebugRainbowsSample.Skia.Wpf.Host.csproj", "{83948936-4E48-434E-B493-D4FA1C9E9C2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Wpf.Host", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Wpf.Host\DebugRainbowsSample.Skia.Wpf.Host.csproj", "{83948936-4E48-434E-B493-D4FA1C9E9C2C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Wpf", "Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Wpf\DebugRainbowsSample.Skia.Wpf.csproj", "{A2BE56F4-2618-4E1E-8295-C70EFD9BB908}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Wpf", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Wpf\DebugRainbowsSample.Skia.Wpf.csproj", "{A2BE56F4-2618-4E1E-8295-C70EFD9BB908}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Gtk", "Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Gtk\DebugRainbowsSample.Skia.Gtk.csproj", "{4C13D004-1255-4776-9A64-1B5983046869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Gtk", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Gtk\DebugRainbowsSample.Skia.Gtk.csproj", "{4C13D004-1255-4776-9A64-1B5983046869}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Tizen", "Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Tizen\DebugRainbowsSample.Skia.Tizen.csproj", "{944EE177-2BAC-4505-8941-624AA7D73F0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Tizen", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Tizen\DebugRainbowsSample.Skia.Tizen.csproj", "{944EE177-2BAC-4505-8941-624AA7D73F0C}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DebugRainbowsSample.Shared", "Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DebugRainbowsSample.Shared", "..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{04fed75e-7534-4565-adec-4187a5ff96cc}*SharedItemsImports = 4
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{4c13d004-1255-4776-9a64-1b5983046869}*SharedItemsImports = 5
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{4cad0c7b-086d-4f8c-b45e-bd43b57c4969}*SharedItemsImports = 4
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{7150970f-b94e-42e2-8c77-6026cb14d664}*SharedItemsImports = 5
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{944ee177-2bac-4505-8941-624aa7d73f0c}*SharedItemsImports = 5
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{a2be56f4-2618-4e1e-8295-c70efd9bb908}*SharedItemsImports = 5
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{d8d6b996-64ed-440d-9cdb-b4b685584d30}*SharedItemsImports = 4
-		Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{f2e867e6-16e8-463d-827e-31e0265bc6f3}*SharedItemsImports = 4
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{04fed75e-7534-4565-adec-4187a5ff96cc}*SharedItemsImports = 4
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{4c13d004-1255-4776-9a64-1b5983046869}*SharedItemsImports = 5
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{4cad0c7b-086d-4f8c-b45e-bd43b57c4969}*SharedItemsImports = 4
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{7150970f-b94e-42e2-8c77-6026cb14d664}*SharedItemsImports = 5
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{944ee177-2bac-4505-8941-624aa7d73f0c}*SharedItemsImports = 5
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{a2be56f4-2618-4e1e-8295-c70efd9bb908}*SharedItemsImports = 5
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{d8d6b996-64ed-440d-9cdb-b4b685584d30}*SharedItemsImports = 4
+		..\Sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{f2e867e6-16e8-463d-827e-31e0265bc6f3}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
