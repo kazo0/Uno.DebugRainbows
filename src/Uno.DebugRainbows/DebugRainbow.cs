@@ -108,6 +108,10 @@ namespace Uno.DebugRainbows
             {
 				control.Background = GetColor();
             }
+			else if (element is Border border)
+            {
+				border.Background = GetColor();
+			}
 #endif
 		}
 
