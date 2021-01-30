@@ -7,8 +7,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    dbg:DebugRainbow.ShowColors="True"
-    dbg:DebugRainbow.Tomato="{x:Bind IsTomato, Mode=OneWay}">
+    dbg:DebugRainbow.ShowGrid="True"
+    dbg:DebugRainbow.MajorGridLineInterval="{x:Bind DebugMajorGridLineInterval}"
+    dbg:DebugRainbow.HorizontalItemsSize="{x:Bind DebugHorizontalItemSize}"
+    dbg:DebugRainbow.Inverse="False"
+    >
 
     <Grid Margin="30">
         <Grid Margin="30">
@@ -18,10 +21,9 @@
                     <StackPanel>
                         <Grid Margin="50">
                             <Grid Margin="80">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Height="20" Width="20" Stretch="Uniform" Source="ms-appx:///Assets/tomato.png"/>
-                                    <Button Content="PRESS FOR TOMATO" Click="Button_Click"/>
-                                    <Image Height="20" Width="20" Stretch="Uniform" Source="ms-appx:///Assets/tomato.png"/>
+                                <StackPanel>
+                                    <Slider Value="{x:Bind DebugHorizontalItemSize, Mode=TwoWay}"/>
+                                    <Slider Value="{x:Bind DebugMajorGridLineInterval, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Grid>
                         </Grid>

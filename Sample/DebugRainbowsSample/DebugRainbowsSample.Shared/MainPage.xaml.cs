@@ -24,25 +24,34 @@ namespace DebugRainbowsSample
     {
 
 
-        public bool IsTomato
+        public int DebugHorizontalItemSize
         {
-            get { return (bool)GetValue(IsTomatoProperty); }
-            set { SetValue(IsTomatoProperty, value); }
+            get { return (int)GetValue(DebugHorizontalItemSizeProperty); }
+            set { SetValue(DebugHorizontalItemSizeProperty, value); }
         }
 
-        // Using a DependencyProperty as the backing store for IsTomato.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty IsTomatoProperty =
-            DependencyProperty.Register("IsTomato", typeof(bool), typeof(MainPage), new PropertyMetadata(false));
+        // Using a DependencyProperty as the backing store for DebugHorizontalItemSize.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DebugHorizontalItemSizeProperty =
+            DependencyProperty.Register("DebugHorizontalItemSize", typeof(int), typeof(MainPage), new PropertyMetadata(10));
+
+
+
+
+        public int DebugMajorGridLineInterval
+        {
+            get { return (int)GetValue(DebugMajorGridLineIntervalProperty); }
+            set { SetValue(DebugMajorGridLineIntervalProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DebugMajorGridLineInterval.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DebugMajorGridLineIntervalProperty =
+            DependencyProperty.Register("DebugMajorGridLineInterval", typeof(int), typeof(MainPage), new PropertyMetadata(3));
+
 
 
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            IsTomato = true;
         }
     }
 }
