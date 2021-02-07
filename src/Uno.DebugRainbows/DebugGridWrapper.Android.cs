@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 
 namespace Uno.DebugRainbows
 {
+    //The following code has been modified, but mostly left as is, from https://github.com/sthewissen/Xamarin.Forms.DebugRainbows
     partial class DebugGridWrapper
     {
         private int screenWidth;
