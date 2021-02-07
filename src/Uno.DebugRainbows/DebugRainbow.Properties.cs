@@ -97,19 +97,18 @@ namespace Uno.DebugRainbows
             DependencyProperty.RegisterAttached("MajorGridLineInterval", typeof(int), typeof(Page), new PropertyMetadata(0));
 
 
-
-        public static Brush GetMajorGridLineBrush(DependencyObject obj)
+        public static SolidColorBrush GetMajorGridLineBrush(DependencyObject obj)
         {
-            return (Brush)obj.GetValue(MajorGridLineBrushProperty);
+            return (SolidColorBrush)obj.GetValue(MajorGridLineBrushProperty);
         }
 
-        public static void SetMajorGridLineBrush(DependencyObject obj, Brush value)
+        public static void SetMajorGridLineBrush(DependencyObject obj, SolidColorBrush value)
         {
             obj.SetValue(MajorGridLineBrushProperty, value);
         }
 
         public static readonly DependencyProperty MajorGridLineBrushProperty =
-            DependencyProperty.RegisterAttached("MajorGridLineBrush", typeof(Brush), typeof(Page), new PropertyMetadata(GetGridLineBrush()));
+            DependencyProperty.RegisterAttached("MajorGridLineBrush", typeof(SolidColorBrush), typeof(Page), new PropertyMetadata(GetGridLineBrush()));
 
 
 
@@ -154,18 +153,18 @@ namespace Uno.DebugRainbows
         public static readonly DependencyProperty GridLinePaddingProperty =
             DependencyProperty.RegisterAttached("GridLinePadding", typeof(Thickness), typeof(Page), new PropertyMetadata(default(Thickness)));
 
-        public static Brush GetGridLineBrush(DependencyObject obj)
+        public static SolidColorBrush GetGridLineBrush(DependencyObject obj)
         {
-            return (Brush)obj.GetValue(GridLineBrushProperty);
+            return (SolidColorBrush)obj.GetValue(GridLineBrushProperty);
         }
 
-        public static void SetGridLineBrush(DependencyObject obj, Brush value)
+        public static void SetGridLineBrush(DependencyObject obj, SolidColorBrush value)
         {
             obj.SetValue(GridLineBrushProperty, value);
         }
 
         public static readonly DependencyProperty GridLineBrushProperty =
-            DependencyProperty.RegisterAttached("GridLineBrush", typeof(Brush), typeof(Page), new PropertyMetadata(GetGridLineBrush()));
+            DependencyProperty.RegisterAttached("GridLineBrush", typeof(SolidColorBrush), typeof(Page), new PropertyMetadata(GetGridLineBrush()));
 
 
 

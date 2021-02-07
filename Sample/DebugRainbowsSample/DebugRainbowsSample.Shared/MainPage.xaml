@@ -8,28 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     dbg:DebugRainbow.ShowGrid="True"
-    dbg:DebugRainbow.MajorGridLineInterval="{x:Bind DebugMajorGridLineInterval}"
-    dbg:DebugRainbow.HorizontalItemsSize="{x:Bind DebugHorizontalItemSize}"
+    dbg:DebugRainbow.MajorGridLineInterval="{x:Bind DebugMajorGridLineInterval, Mode=OneWay}"
+    dbg:DebugRainbow.HorizontalItemsSize="{x:Bind DebugHorizontalItemSize, Mode=OneWay}"
     dbg:DebugRainbow.Inverse="False"
     >
 
-    <Grid Margin="30">
-        <Grid Margin="30">
-		    
-            <StackPanel>
-                <Grid>
-                    <StackPanel>
-                        <Grid Margin="50">
-                            <Grid Margin="80">
-                                <StackPanel>
-                                    <Slider Value="{x:Bind DebugHorizontalItemSize, Mode=TwoWay}"/>
-                                    <Slider Value="{x:Bind DebugMajorGridLineInterval, Mode=TwoWay}"/>
-                                </StackPanel>
-                            </Grid>
-                        </Grid>
-                    </StackPanel>
-                </Grid>
-            </StackPanel>
-        </Grid>
+    <Grid>
+        <TextBlock Text="Hello Uno.DebugRainbows!" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Page>

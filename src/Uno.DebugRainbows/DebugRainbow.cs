@@ -154,6 +154,8 @@ namespace Uno.DebugRainbows
 #endif
 		}
 
+        static partial void BuildGridPartial(Page page);
+
 		private static void BuildGrid(Page page)
 		{
 			if (page.Content is FrameworkElement content)
@@ -162,15 +164,35 @@ namespace Uno.DebugRainbows
 				{
 					page.Content = null;
 
-					var newContent = new Grid()
-					{
-						Name = nameof(DebugRainbow),
-					};
+                    var gridContent = new DebugGridWrapper
+                    {
+                        HorizontalItemSize = GetHorizontalItemsSize(page),
+                        VerticalItemSize = GetVerticalItemsSize(page),
+                        MajorGridLineBrush = GetMajorGridLineBrush(page),
+                        GridLineBrush = GetGridLineBrush(page),
+                        MajorGridLineOpacity = GetMajorGridLineOpacity(page),
+                        GridLineOpacity = GetGridLineOpacity(page),
+                        MajorGridLineInterval = GetMajorGridLineInterval(page),
+                        MajorGridLineWidth = GetMajorGridLineWidth(page),
+                        GridLineWidth = GetGridLineWidth(page),
+                        MakeGridRainbows = GetMakeGridRainbows(page),
+                        Inverse = GetInverse(page),
+                        Height = content.Height,
+                        Width = content.Width,
+                        GridOrigin = GetGridOrigin(page)
+                    };
 
-					newContent.Children.Add(content);
-					newContent.Children.Add(GetOverlayGrid(page));
+                    Grid newContent = new Grid()
+                    {
+                        Name = nameof(DebugRainbow),
+                        Height = content.Height,
+                        Width = content.Width
+                    };
 
-					page.Content = newContent;
+                    newContent.Children.Add(content);
+                    newContent.Children.Add(gridContent);
+
+                    page.Content = newContent;
 				}
 			}
 		}
