@@ -103,6 +103,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\library\Uno.DebugRainbows\Uno.DebugRainbows.csproj">
+      <Project>{01507cb3-c4e3-4c0d-81d2-0012c0c346c0}</Project>
+      <Name>Uno.DebugRainbows</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Target Name="VS16Mac_RemoveSystemMemory" BeforeTargets="ResolveAssemblyReferences">
     <!--

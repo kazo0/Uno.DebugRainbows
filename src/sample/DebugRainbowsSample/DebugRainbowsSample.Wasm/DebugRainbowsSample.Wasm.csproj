@@ -45,7 +45,7 @@
     <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="1.3.4" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\Uno.DebugRainbows\Uno.DebugRainbows.Wasm.csproj" />
+    <ProjectReference Include="..\..\..\library\Uno.DebugRainbows\Uno.DebugRainbows.Wasm.csproj" />
   </ItemGroup>
   <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" Condition="Exists('..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems')" />
 </Project>
