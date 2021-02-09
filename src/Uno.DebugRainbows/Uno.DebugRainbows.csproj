@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+  <PropertyGroup>
+    <TargetFrameworks>uap10.0.16299;netstandard2.0;xamarinios10;xamarinmac20;monoandroid11.0;monoandroid10.0</TargetFrameworks>
+  </PropertyGroup>
+  <ItemGroup>
+    <UnoRuntimeProjectReference Include="Uno.DebugRainbows.Wasm.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="buildTransitive\**">
+      <PackagePath>buildTransitive</PackagePath>
+      <Pack>true</Pack>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Uno.UI" Version="3.4.0" />
+  </ItemGroup>
+</Project>

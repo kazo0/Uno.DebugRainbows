@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\src\\Rainbows\\Uno.DebugRainbows\\DebugRainbowsSample\\DebugRainbowsSample.Skia.Tizen\\DebugRainbowsSample.Skia.Tizen.csproj": {}
+  },
+  "projects": {
+    "C:\\src\\Rainbows\\Uno.DebugRainbows\\DebugRainbowsSample\\DebugRainbowsSample.Skia.Tizen\\DebugRainbowsSample.Skia.Tizen.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\src\\Rainbows\\Uno.DebugRainbows\\DebugRainbowsSample\\DebugRainbowsSample.Skia.Tizen\\DebugRainbowsSample.Skia.Tizen.csproj",
+        "projectName": "DebugRainbowsSample.Skia.Tizen",
+        "projectPath": "C:\\src\\Rainbows\\Uno.DebugRainbows\\DebugRainbowsSample\\DebugRainbowsSample.Skia.Tizen\\DebugRainbowsSample.Skia.Tizen.csproj",
+        "packagesPath": "C:\\Users\\steve.bilogan\\.nuget\\packages\\",
+        "outputPath": "C:\\src\\Rainbows\\Uno.DebugRainbows\\DebugRainbowsSample\\DebugRainbowsSample.Skia.Tizen\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\steve.bilogan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "tizen50"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "tizen50": {
+            "targetAlias": "tizen50",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "tizen50": {
+          "targetAlias": "tizen50",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Filter": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "SkiaSharp.Views": {
+              "target": "Package",
+              "version": "[2.80.2, )"
+            },
+            "Tizen.NET": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0.15631, )",
+              "autoReferenced": true
+            },
+            "Uno.UI.RemoteControl": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Uno.UI.Skia.Tizen": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

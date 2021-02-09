@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "lJTu8L2xdOGbtGHUBUDxkb/efm2rhgqRcCK4ru5qP8qM58JYM4kSffZkBFNh5eJSst1FzsoMArkcTLXZXRFpQg==",
+  "success": false,
+  "projectFilePath": "C:\\src\\Rainbows\\Uno.DebugRainbows\\src\\Uno.DebugRainbows\\Uno.DebugRainbows.Skia.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\steve.bilogan\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\steve.bilogan\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1101",
+      "level": "Error",
+      "message": "Unable to find package Uno.UI.Runtime.Skia. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages, nuget.org",
+      "libraryId": "Uno.UI.Runtime.Skia",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

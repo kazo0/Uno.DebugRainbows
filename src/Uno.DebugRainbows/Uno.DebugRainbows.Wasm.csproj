@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<RootNamespace>Uno.DebugRainbows</RootNamespace>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Uno.UI.Runtime.WebAssembly" Version="3.4.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="WasmScripts\debugGridWrapper.js" />
+		<UpToDateCheckInput Include="ts\**\*" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.9.2">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>
