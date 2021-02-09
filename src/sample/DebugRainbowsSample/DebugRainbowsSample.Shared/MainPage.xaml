@@ -8,7 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     dbg:DebugRainbow.ShowGrid="True"
-    dbg:DebugRainbow.Inverse="False"
+    dbg:DebugRainbow.Inverse="True"
+    dbg:DebugRainbow.MajorGridLineWidth="5"
 	Background="Black">
 
 	<Grid>

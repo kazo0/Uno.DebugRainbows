@@ -33,9 +33,9 @@ namespace Uno.DebugRainbows
 				",majorGridLineInterval:",
 				MajorGridLineInterval.ToString(),
 				",majorGridLineBrush:\"",
-				$"#{MajorGridLineBrush.Color.R:X2}{MajorGridLineBrush.Color.G:X2}{MajorGridLineBrush.Color.B:X2}",
+				$"#{MajorGridLineBrush.Color.R:X2}{MajorGridLineBrush.Color.G:X2}{MajorGridLineBrush.Color.B:X2}{(int)(255 * MajorGridLineOpacity):X2}",
 				"\",gridLineBrush:\"",
-				$"#{GridLineBrush.Color.R:X2}{GridLineBrush.Color.G:X2}{GridLineBrush.Color.B:X2}",
+				$"#{GridLineBrush.Color.R:X2}{GridLineBrush.Color.G:X2}{GridLineBrush.Color.B:X2}{(int)(255 * GridLineOpacity):X2}",
 				"\",majorGridLineOpacity:",
 				MajorGridLineOpacity.ToString(),
 				",gridLineOpacity:",
@@ -56,6 +56,7 @@ namespace Uno.DebugRainbows
 				this.GetHtmlId(),
 				"'));"
 			};
+			Console.WriteLine(string.Concat(js));
 			WebAssemblyRuntime.InvokeJS(string.Concat(js));
 		}
 	}
