@@ -6,6 +6,7 @@ using Uno.Foundation;
 using Uno.UI.Runtime.WebAssembly;
 using Windows.UI;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 
 namespace Uno.DebugRainbows
 {
@@ -15,7 +16,9 @@ namespace Uno.DebugRainbows
 		partial void PartialCtor()
 		{
 			Loaded += DebugGridWrapper_Loaded;
-			;
+
+			this.ClearCssStyle("height", "width");
+			this.SetHtmlAttribute(("height", $"{((Frame)Window.Current.Content).ActualHeight}"), ("width", $"{((Frame)Window.Current.Content).ActualWidth}"));
 		}
 
 		private void DebugGridWrapper_Loaded(object sender, RoutedEventArgs e)

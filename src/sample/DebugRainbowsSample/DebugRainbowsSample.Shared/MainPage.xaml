@@ -9,8 +9,7 @@
     mc:Ignorable="d"
     dbg:DebugRainbow.ShowGrid="True"
     dbg:DebugRainbow.Inverse="False"
-	Background="Black"
-    >
+	Background="Black">
 
 	<Grid>
 		<TextBlock Text="Hello Uno.DebugRainbows!" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
