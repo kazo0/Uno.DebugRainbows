@@ -9,7 +9,7 @@ var Uno;
             DebugGridWrapper.prototype.drawGrid = function (canvas) {
                 var context = canvas.getContext("2d");
                 var colors = ["#f3855b", "#fbcf93", "#fbe960", "#a0e67a", "#33c6ee", "#c652ba"];
-                console.log("" + this.makeGridRainbows);
+                console.log("" + this.inverse);
                 if (this.inverse === true) {
                     this.drawInverse(context, colors);
                 }
@@ -24,7 +24,7 @@ var Uno;
                     var verticalPosition = 0;
                     var i = 0;
                     while (verticalPosition <= window.innerHeight) {
-                        this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.setMajor(context) : this.setMinor(context);
+                        this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.setMajor(context) : this.setMinor(context);
                         context.beginPath();
                         context.moveTo(0, verticalPosition);
                         context.lineTo(window.innerWidth, verticalPosition);
@@ -35,7 +35,7 @@ var Uno;
                     var horizontalPosition = 0;
                     i = 0;
                     while (horizontalPosition <= window.innerWidth) {
-                        this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.setMajor(context) : this.setMinor(context);
+                        this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.setMajor(context) : this.setMinor(context);
                         context.beginPath();
                         context.moveTo(horizontalPosition, 0);
                         context.lineTo(horizontalPosition, window.innerHeight);
@@ -84,9 +84,9 @@ var Uno;
                     var horizontalTotal = 0;
                     for (var i = 1; horizontalTotal < screenWidth; i++) {
                         var verticalTotal = 0;
-                        var horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+                        var horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
                         for (var j = 1; verticalTotal < screenHeight; j++) {
-                            var verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+                            var verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
                             if (this.makeGridRainbows === true) {
                                 var color = colors[(i + j) % colors.length];
                                 context.fillStyle = color;
@@ -101,7 +101,7 @@ var Uno;
                     var horizontalRightTotal = (screenWidth / 2) + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2);
                     var horizontalLeftTotal = (screenWidth / 2) - (this.horizontalItemSize + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2));
                     for (var i = 1; horizontalRightTotal < screenWidth; i++) {
-                        var horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+                        var horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
                         var verticalBottomTotal = (screenHeight / 2) + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2);
                         var verticalTopTotal = (screenHeight / 2) - (this.verticalItemSize + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2));
                         for (var j = 1; verticalBottomTotal < screenHeight; j++) {
@@ -109,11 +109,11 @@ var Uno;
                                 var color = colors[(i + j) % colors.length];
                                 context.fillStyle = color;
                             }
-                            var verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
-                            context.fillRect(horizontalRightTotal, verticalBottomTotal, (horizontalRightTotal + this.horizontalItemSize), (verticalBottomTotal + this.verticalItemSize));
-                            context.fillRect(horizontalLeftTotal, verticalTopTotal, (horizontalLeftTotal + this.horizontalItemSize), (verticalTopTotal + this.verticalItemSize));
-                            context.fillRect(horizontalRightTotal, verticalTopTotal, (horizontalRightTotal + this.horizontalItemSize), (verticalTopTotal + this.verticalItemSize));
-                            context.fillRect(horizontalLeftTotal, verticalBottomTotal, (horizontalLeftTotal + this.horizontalItemSize), (verticalBottomTotal + this.verticalItemSize));
+                            var verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
+                            context.fillRect(horizontalRightTotal, verticalBottomTotal, this.horizontalItemSize, this.verticalItemSize);
+                            context.fillRect(horizontalLeftTotal, verticalTopTotal, this.horizontalItemSize, this.verticalItemSize);
+                            context.fillRect(horizontalRightTotal, verticalTopTotal, this.horizontalItemSize, this.verticalItemSize);
+                            context.fillRect(horizontalLeftTotal, verticalBottomTotal, this.horizontalItemSize, this.verticalItemSize);
                             verticalTopTotal -= (this.verticalItemSize + verticalSpacerSize);
                             verticalBottomTotal += (this.verticalItemSize + verticalSpacerSize);
                         }

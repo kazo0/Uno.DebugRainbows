@@ -38,7 +38,7 @@ namespace Uno.DebugRainbows {
 			const context = canvas.getContext("2d");
 
 			const colors = ["#f3855b", "#fbcf93", "#fbe960", "#a0e67a", "#33c6ee", "#c652ba"];
-			console.log(`${this.makeGridRainbows}`);
+			console.log(`${this.inverse}`);
 			if (this.inverse === true) {
 				this.drawInverse(context, colors);
 			} else {
@@ -55,7 +55,7 @@ namespace Uno.DebugRainbows {
 				let verticalPosition = 0;
 				let i = 0;
 				while (verticalPosition <= window.innerHeight) {
-					this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.setMajor(context) : this.setMinor(context);
+					this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.setMajor(context) : this.setMinor(context);
 
 					context.beginPath();
 					context.moveTo(0, verticalPosition);
@@ -69,7 +69,7 @@ namespace Uno.DebugRainbows {
 				let horizontalPosition = 0;
 				i = 0;
 				while (horizontalPosition <= window.innerWidth) {
-					this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.setMajor(context) : this.setMinor(context);
+					this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.setMajor(context) : this.setMinor(context);
 
 					context.beginPath();
 					context.moveTo(horizontalPosition, 0);
@@ -130,10 +130,10 @@ namespace Uno.DebugRainbows {
 				let horizontalTotal = 0;
 				for (let i = 1; horizontalTotal < screenWidth; i++) {
 					let verticalTotal = 0;
-					let horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+					let horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
 
 					for (let j = 1; verticalTotal < screenHeight; j++) {
-						let verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+						let verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
 
 						if (this.makeGridRainbows === true) {
 							let color = colors[(i + j) % colors.length];
@@ -151,7 +151,7 @@ namespace Uno.DebugRainbows {
 				let horizontalLeftTotal = (screenWidth / 2) - (this.horizontalItemSize + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2));
 
 				for (let i = 1; horizontalRightTotal < screenWidth; i++) {
-					let horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+					let horizontalSpacerSize = this.majorGridLineInterval > 0 && i % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
 					let verticalBottomTotal = (screenHeight / 2) + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2);
 					let verticalTopTotal = (screenHeight / 2) - (this.verticalItemSize + ((this.majorGridLineInterval > 0 ? this.majorGridLineWidth : this.gridLineWidth) / 2));
 
@@ -161,15 +161,15 @@ namespace Uno.DebugRainbows {
 							context.fillStyle = color;
 						}
 
-						let verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval == 0 ? this.majorGridLineWidth : this.gridLineWidth;
+						let verticalSpacerSize = this.majorGridLineInterval > 0 && j % this.majorGridLineInterval === 0 ? this.majorGridLineWidth : this.gridLineWidth;
 
-						context.fillRect(horizontalRightTotal, verticalBottomTotal, (horizontalRightTotal + this.horizontalItemSize), (verticalBottomTotal + this.verticalItemSize));
+						context.fillRect(horizontalRightTotal, verticalBottomTotal, this.horizontalItemSize, this.verticalItemSize);
 
-						context.fillRect(horizontalLeftTotal, verticalTopTotal, (horizontalLeftTotal + this.horizontalItemSize), (verticalTopTotal + this.verticalItemSize));
+						context.fillRect(horizontalLeftTotal, verticalTopTotal, this.horizontalItemSize, this.verticalItemSize);
 
-						context.fillRect(horizontalRightTotal, verticalTopTotal, (horizontalRightTotal + this.horizontalItemSize), (verticalTopTotal + this.verticalItemSize));
+						context.fillRect(horizontalRightTotal, verticalTopTotal, this.horizontalItemSize, this.verticalItemSize);
 
-						context.fillRect(horizontalLeftTotal, verticalBottomTotal, (horizontalLeftTotal + this.horizontalItemSize), (verticalBottomTotal + this.verticalItemSize));
+						context.fillRect(horizontalLeftTotal, verticalBottomTotal, this.horizontalItemSize, this.verticalItemSize);
 
 						verticalTopTotal -= (this.verticalItemSize + verticalSpacerSize);
 						verticalBottomTotal += (this.verticalItemSize + verticalSpacerSize);

@@ -18,8 +18,8 @@
     dbg:DebugRainbow.GridLineOpacity=".5" 
     dbg:DebugRainbow.GridLineWidth="1"  
     dbg:DebugRainbow.GridOrigin="Center" 
-    dbg:DebugRainbow.MakeGridRainbows="false" 
-    dbg:DebugRainbow.Inverse="false">
+    dbg:DebugRainbow.MakeGridRainbows="False" 
+    dbg:DebugRainbow.Inverse="False">
 
 	<Grid>
 		<TextBlock Text="Hello Uno.DebugRainbows!" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
