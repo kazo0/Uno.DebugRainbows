@@ -175,8 +175,6 @@ namespace Uno.DebugRainbows
 						GridLineWidth = GetGridLineWidth(page),
 						MakeGridRainbows = GetMakeGridRainbows(page),
 						Inverse = GetInverse(page),
-						Height = content.Height,
-						Width = content.Width,
 						GridOrigin = GetGridOrigin(page)
 					};
 

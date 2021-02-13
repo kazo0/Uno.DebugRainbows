@@ -10,7 +10,7 @@ var Uno;
                 var context = canvas.getContext("2d");
                 var colors = ["#f3855b", "#fbcf93", "#fbe960", "#a0e67a", "#33c6ee", "#c652ba"];
                 console.log("" + this.makeGridRainbows);
-                if (this.inverse) {
+                if (this.inverse === true) {
                     this.drawInverse(context, colors);
                 }
                 else {

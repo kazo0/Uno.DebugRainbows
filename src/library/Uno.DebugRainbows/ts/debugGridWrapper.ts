@@ -39,7 +39,7 @@ namespace Uno.DebugRainbows {
 
 			const colors = ["#f3855b", "#fbcf93", "#fbe960", "#a0e67a", "#33c6ee", "#c652ba"];
 			console.log(`${this.makeGridRainbows}`);
-			if (this.inverse) {
+			if (this.inverse === true) {
 				this.drawInverse(context, colors);
 			} else {
 				this.drawNormal(context, colors);
