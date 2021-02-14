@@ -107,12 +107,12 @@ namespace Uno.DebugRainbows
 				fe.Background = GetColor();
 			}
 #else
-            else if (element is Control control)
-            {
+			else if (element is Control control)
+			{
 				control.Background = GetColor();
-            }
+			}
 			else if (element is Border border)
-            {
+			{
 				border.Background = GetColor();
 			}
 #endif
@@ -129,11 +129,12 @@ namespace Uno.DebugRainbows
 #endif
 			}
 #if !HAS_UNO
-			return new SolidColorBrush(new Windows.UI.Color() { 
-				A = 255, 
-				R = (byte)_randomGen.Next(0, 255), 
-				B = (byte)_randomGen.Next(0, 255), 
-				G = (byte)_randomGen.Next(0, 255) 
+			return new SolidColorBrush(new Windows.UI.Color()
+			{
+				A = 255,
+				R = (byte)_randomGen.Next(0, 255),
+				B = (byte)_randomGen.Next(0, 255),
+				G = (byte)_randomGen.Next(0, 255)
 			});
 #else
 			return SolidColorBrushHelper

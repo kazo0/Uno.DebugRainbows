@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{6E6A007E-AF5E-4CEA-B2C4-AE28F107488E}</ProjectGuid>
+    <ProjectGuid>{3E76A7FA-2681-42DA-9D96-2662768AC2EE}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>DebugRainbowsSample</RootNamespace>
@@ -149,12 +149,13 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\..\library\Uno.DebugRainbows\Uno.DebugRainbows.csproj">
-      <Project>{01507cb3-c4e3-4c0d-81d2-0012c0c346c0}</Project>
+      <Project>{c213d4da-2844-44bc-957d-82a364d145f0}</Project>
       <Name>Uno.DebugRainbows</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" Condition="Exists('..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems')" />
+  <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
