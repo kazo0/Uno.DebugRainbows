@@ -6,7 +6,7 @@
 		<RootNamespace>Uno.DebugRainbows</RootNamespace>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Uno.UI.Runtime.WebAssembly" Version="3.4.0" />
+		<PackageReference Include="Uno.UI.Runtime.WebAssembly" Version="3.5.1" />
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="WasmScripts\debugGridWrapper.js" />
