@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{017EF472-EF90-4617-8C2F-A8B2BF96DC16}</ProjectGuid>
+    <ProjectGuid>{097BF4B3-CB50-4CA2-B7EF-92D37DA4937A}</ProjectGuid>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>DebugRainbowsSample.macOS</RootNamespace>
@@ -74,7 +74,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Filter" Version="1.1.1" />
   </ItemGroup>
-  <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" Condition="Exists('..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems')" />
+  <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" />
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128.png" />
@@ -91,12 +91,14 @@
     <ImageAsset Include="Assets.xcassets\unologo.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\unologo.imageset\unoplatform.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Fonts\uno-fluentui-assets.ttf">
@@ -105,18 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\library\Uno.DebugRainbows\Uno.DebugRainbows.csproj">
-      <Project>{01507cb3-c4e3-4c0d-81d2-0012c0c346c0}</Project>
+      <Project>{c213d4da-2844-44bc-957d-82a364d145f0}</Project>
       <Name>Uno.DebugRainbows</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <Target Name="VS16Mac_RemoveSystemMemory" BeforeTargets="ResolveAssemblyReferences">
     <!--
-				VS4Mac seems to process System.Memory differently, and removes
-				the System.Memory local reference if the package is transitively referenced.
-				We remove the Reference added by the nuget targets so that ResolveAssemblyReferences
-				is properly adding the local System.Memory to the Reference item group.
-		-->
+        VS4Mac seems to process System.Memory differently, and removes
+        the System.Memory local reference if the package is transitively referenced.
+        We remove the Reference added by the nuget targets so that ResolveAssemblyReferences
+        is properly adding the local System.Memory to the Reference item group.
+    -->
     <ItemGroup>
       <_ReferenceToRemove Include="@(Reference)" Condition="'%(Reference.Identity)'=='System.Memory'" />
       <Reference Remove="@(_ReferenceToRemove)" />

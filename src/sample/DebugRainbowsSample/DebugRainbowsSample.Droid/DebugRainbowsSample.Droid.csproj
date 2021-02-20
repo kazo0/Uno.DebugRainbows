@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{F14CFFEE-08E2-4D92-8A16-961B345FD799}</ProjectGuid>
+    <ProjectGuid>{0F3C0664-BDA6-4CD0-872A-49055994D1C6}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -17,7 +17,7 @@
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v10.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <AndroidUseIntermediateDesignerFile>True</AndroidUseIntermediateDesignerFile>
     <ResourcesDirectory>..\DebugRainbowsSample.Shared\Strings</ResourcesDirectory>
@@ -90,11 +90,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\library\Uno.DebugRainbows\Uno.DebugRainbows.csproj">
-      <Project>{01507cb3-c4e3-4c0d-81d2-0012c0c346c0}</Project>
+      <Project>{c213d4da-2844-44bc-957d-82a364d145f0}</Project>
       <Name>Uno.DebugRainbows</Name>
     </ProjectReference>
   </ItemGroup>
-  <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" Condition="Exists('..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems')" />
+  <Import Project="..\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- This will force the generation of the APK when not building inside visual studio -->
   <Target Name="GenerateBuild" DependsOnTargets="SignAndroidPackage" AfterTargets="Build" Condition="'$(BuildingInsideVisualStudio)'==''" />

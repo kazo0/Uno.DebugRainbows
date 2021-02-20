@@ -43,20 +43,20 @@ namespace DebugRainbowsSample
 		protected override void OnLaunched(LaunchActivatedEventArgs e)
 		{
 #if DEBUG
-			if (System.Diagnostics.Debugger.IsAttached)
-			{
-				// this.DebugSettings.EnableFrameRateCounter = true;
-			}
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                // this.DebugSettings.EnableFrameRateCounter = true;
+            }
 #endif
 
 #if NET5_0 && WINDOWS
-			var window = new Window();
-			window.Activate();
+            var window = new Window();
+            window.Activate();
 #else
 			var window = Windows.UI.Xaml.Window.Current;
 #endif
 
-			Frame rootFrame = window.Content as Frame;
+			var rootFrame = window.Content as Frame;
 
 			// Do not repeat app initialization when the Window already has content,
 			// just ensure that the window is active
@@ -129,42 +129,42 @@ namespace DebugRainbowsSample
 						{ "Uno", LogLevel.Warning },
 						{ "Windows", LogLevel.Warning },
 
-						// Debug JS interop
-						// { "Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug },
+                        // Debug JS interop
+                        // { "Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug },
 
-						// Generic Xaml events
-						// { "Windows.UI.Xaml", LogLevel.Debug },
-						// { "Windows.UI.Xaml.VisualStateGroup", LogLevel.Debug },
-						// { "Windows.UI.Xaml.StateTriggerBase", LogLevel.Debug },
-						// { "Windows.UI.Xaml.UIElement", LogLevel.Debug },
+                        // Generic Xaml events
+                        // { "Windows.UI.Xaml", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.VisualStateGroup", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.StateTriggerBase", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.UIElement", LogLevel.Debug },
 
-						// Layouter specific messages
-						// { "Windows.UI.Xaml.Controls", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.Layouter", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.Panel", LogLevel.Debug },
-						// { "Windows.Storage", LogLevel.Debug },
+                        // Layouter specific messages
+                        // { "Windows.UI.Xaml.Controls", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.Layouter", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.Panel", LogLevel.Debug },
+                        // { "Windows.Storage", LogLevel.Debug },
 
-						// Binding related messages
-						// { "Windows.UI.Xaml.Data", LogLevel.Debug },
+                        // Binding related messages
+                        // { "Windows.UI.Xaml.Data", LogLevel.Debug },
 
-						// DependencyObject memory references tracking
-						// { "ReferenceHolder", LogLevel.Debug },
+                        // DependencyObject memory references tracking
+                        // { "ReferenceHolder", LogLevel.Debug },
 
-						// ListView-related messages
-						// { "Windows.UI.Xaml.Controls.ListViewBase", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.ListView", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.GridView", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.VirtualizingPanelLayout", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.NativeListViewBase", LogLevel.Debug },
-						// { "Windows.UI.Xaml.Controls.ListViewBaseSource", LogLevel.Debug }, //iOS
-						// { "Windows.UI.Xaml.Controls.ListViewBaseInternalContainer", LogLevel.Debug }, //iOS
-						// { "Windows.UI.Xaml.Controls.NativeListViewBaseAdapter", LogLevel.Debug }, //Android
-						// { "Windows.UI.Xaml.Controls.BufferViewCache", LogLevel.Debug }, //Android
-						// { "Windows.UI.Xaml.Controls.VirtualizingPanelGenerator", LogLevel.Debug }, //WASM
-					}
+                        // ListView-related messages
+                        // { "Windows.UI.Xaml.Controls.ListViewBase", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.ListView", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.GridView", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.VirtualizingPanelLayout", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.NativeListViewBase", LogLevel.Debug },
+                        // { "Windows.UI.Xaml.Controls.ListViewBaseSource", LogLevel.Debug }, //iOS
+                        // { "Windows.UI.Xaml.Controls.ListViewBaseInternalContainer", LogLevel.Debug }, //iOS
+                        // { "Windows.UI.Xaml.Controls.NativeListViewBaseAdapter", LogLevel.Debug }, //Android
+                        // { "Windows.UI.Xaml.Controls.BufferViewCache", LogLevel.Debug }, //Android
+                        // { "Windows.UI.Xaml.Controls.VirtualizingPanelGenerator", LogLevel.Debug }, //WASM
+                    }
 				)
 #if DEBUG
-				.AddConsole(LogLevel.Debug);
+                .AddConsole(LogLevel.Debug);
 #else
 				.AddConsole(LogLevel.Information);
 #endif

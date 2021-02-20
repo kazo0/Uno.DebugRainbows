@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Uno.DebugRainbows
 {
-    public enum DebugGridOrigin : int
+    public enum DebugGridOrigin
     {
         Center,
         TopLeft,
