@@ -10,7 +10,7 @@
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="SkiaSharp.Views.Uno" Version="2.80.2" />
+    <PackageReference Include="SkiaSharp.Views.Uno" Version="2.80.3-preview.40" />
     <PackageReference Include="Uno.UI" Version="3.5.1" />
   </ItemGroup>
   <ItemGroup>
