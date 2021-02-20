@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using Windows.UI;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Shapes;
 
 namespace Uno.DebugRainbows
 {
@@ -122,13 +116,8 @@ namespace Uno.DebugRainbows
 		{
 			if (_tomatoTime)
 			{
-#if !HAS_UNO
 				return new SolidColorBrush(Colors.Tomato);
-#else
-				return SolidColorBrushHelper.Tomato;
-#endif
 			}
-#if !HAS_UNO
 			return new SolidColorBrush(new Windows.UI.Color()
 			{
 				A = 255,
@@ -136,23 +125,11 @@ namespace Uno.DebugRainbows
 				B = (byte)_randomGen.Next(0, 255),
 				G = (byte)_randomGen.Next(0, 255)
 			});
-#else
-			return SolidColorBrushHelper
-				.FromARGB(
-				255,
-				(byte)_randomGen.Next(0, 255),
-				(byte)_randomGen.Next(0, 255),
-				(byte)_randomGen.Next(0, 255));
-#endif
 		}
 
 		private static Brush GetGridLineBrush()
 		{
-#if HAS_UNO
-			return SolidColorBrushHelper.Red;
-#else
 			return new SolidColorBrush(Colors.Red);
-#endif
 		}
 
 		private static void BuildGrid(Page page)
