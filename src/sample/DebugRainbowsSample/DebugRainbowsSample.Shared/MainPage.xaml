@@ -22,6 +22,6 @@
     dbg:DebugRainbow.Inverse="False">
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-		<TextBlock Text="Hello, world!" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" FontSize="30" />
+		<TextBlock Text="Hello, Uno.DebugRainbows!" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20" FontSize="30" />
 	</Grid>
 </Page>
