@@ -9,6 +9,9 @@
 			<ResourceDictionary Source="Styles/MyButtonStyles.xaml" />
 		-->
 	</ResourceDictionary.MergedDictionaries>
+
+	<FontFamily x:Key="FontAwesomeRegular">ms-appx:///Uno.DebugRainbows.Samples/Assets/Fonts/FontAwesomeRegular.otf#Font Awesome 6 Free Regular</FontFamily>
+	<FontFamily x:Key="FontAwesomeSolid">ms-appx:///Uno.DebugRainbows.Samples/Assets/Fonts/FontAwesomeSolid.otf#Font Awesome 6 Free Solid</FontFamily>
 	
 	<!-- Add resources here -->
 	

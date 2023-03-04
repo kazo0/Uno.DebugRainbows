@@ -10,14 +10,12 @@ namespace Uno.DebugRainbows
 	{
 
 		private static readonly Random _randomGen = new Random();
-		private static bool _tomatoTime = false;
 
 
 		private static void OnTomatoChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
 		{
 #if DEBUG
-			_tomatoTime = (bool)args.NewValue;
-			IterateChildren(dependencyObject as UIElement);
+			IterateChildren(dependencyObject as UIElement, tomato: (bool)args.NewValue);
 #endif
 		}
 
@@ -78,13 +76,13 @@ namespace Uno.DebugRainbows
 #endif
 		}
 
-		private static void IterateChildren(UIElement element)
+		private static void IterateChildren(UIElement element, bool tomato = false)
 		{
 			if (element is Page page)
 			{
 				page.Background = GetColor();
 
-				IterateChildren(page.Content as UIElement);
+				IterateChildren(page.Content as UIElement, tomato);
 			}
 			else if (element is Panel panel)
 			{
@@ -92,7 +90,7 @@ namespace Uno.DebugRainbows
 
 				foreach (var child in panel.Children)
 				{
-					IterateChildren(child);
+					IterateChildren(child, tomato);
 				}
 			}
 #if HAS_UNO
@@ -110,22 +108,23 @@ namespace Uno.DebugRainbows
 				border.Background = GetColor();
 			}
 #endif
+			Brush GetColor()
+			{
+				if (tomato)
+				{
+					return new SolidColorBrush(Colors.Tomato);
+				}
+				return new SolidColorBrush(new Windows.UI.Color()
+				{
+					A = 255,
+					R = (byte)_randomGen.Next(0, 255),
+					B = (byte)_randomGen.Next(0, 255),
+					G = (byte)_randomGen.Next(0, 255)
+				});
+			}
 		}
 
-		private static Brush GetColor()
-		{
-			if (_tomatoTime)
-			{
-				return new SolidColorBrush(Colors.Tomato);
-			}
-			return new SolidColorBrush(new Windows.UI.Color()
-			{
-				A = 255,
-				R = (byte)_randomGen.Next(0, 255),
-				B = (byte)_randomGen.Next(0, 255),
-				G = (byte)_randomGen.Next(0, 255)
-			});
-		}
+		
 
 		private static Brush GetGridLineBrush()
 		{
