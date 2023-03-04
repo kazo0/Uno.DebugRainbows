@@ -1,4 +1,6 @@
-﻿using SkiaSharp;
+﻿// Original code taken from Steven Thewissen's Xamarin.Forms.DebugRainbows (https://github.com/sthewissen/Xamarin.Forms.DebugRainbows)
+
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;

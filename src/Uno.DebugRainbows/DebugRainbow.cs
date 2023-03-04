@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Original code taken from Steven Thewissen's Xamarin.Forms.DebugRainbows (https://github.com/sthewissen/Xamarin.Forms.DebugRainbows)
+
+
+using System;
 using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
