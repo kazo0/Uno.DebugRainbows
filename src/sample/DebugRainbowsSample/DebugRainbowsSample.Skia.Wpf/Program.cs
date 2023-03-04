@@ -1,4 +1,0 @@
-﻿
-namespace DebugRainbowsSample.Skia.Gtk
-{
-}
