@@ -23,7 +23,6 @@ namespace Uno.DebugRainbows.Samples
 	public sealed partial class MainPage : Page
 	{
 		private ToggleButton _selectedItem;
-		private bool _isProcessingCheck;
 
 		public MainPage()
 		{
