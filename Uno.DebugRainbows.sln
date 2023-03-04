@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30317.65
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{470E3EB4-1553-40C0-9A9F-5565703909ED}"
 EndProject
@@ -29,18 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Wp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DebugRainbowsSample.Skia.Wpf.Host", "src\sample\DebugRainbowsSample\DebugRainbowsSample.Skia.Wpf.Host\DebugRainbowsSample.Skia.Wpf.Host.csproj", "{71E4B50E-DE7C-4008-BC1A-E61FC68D200F}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uno.DebugRainbows.vNext", "Uno.DebugRainbows.vNext\Uno.DebugRainbows.vNext.csproj", "{5E040739-77F9-47AC-8F75-333FF889BB17}"
+EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{097bf4b3-cb50-4ca2-b7ef-92d37da4937a}*SharedItemsImports = 4
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{0f3c0664-bda6-4cd0-872a-49055994d1c6}*SharedItemsImports = 4
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{33a12b71-ac70-466d-ac01-89f38b2d5333}*SharedItemsImports = 4
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{3e76a7fa-2681-42da-9d96-2662768ac2ee}*SharedItemsImports = 4
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{58fa2526-a640-4e49-a22f-7cfd7e364215}*SharedItemsImports = 5
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{b160f0aa-6ad9-41c9-bed0-acd19f0ad6b7}*SharedItemsImports = 5
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{b91f036d-8f2f-4b05-bdee-bdc6f0bc78c0}*SharedItemsImports = 5
-		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{fa9dbb96-7aeb-4172-aab3-56417fbfebfc}*SharedItemsImports = 5
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
 		Ad-Hoc|ARM = Ad-Hoc|ARM
@@ -648,6 +639,62 @@ Global
 		{71E4B50E-DE7C-4008-BC1A-E61FC68D200F}.Release|x64.Build.0 = Release|Any CPU
 		{71E4B50E-DE7C-4008-BC1A-E61FC68D200F}.Release|x86.ActiveCfg = Release|Any CPU
 		{71E4B50E-DE7C-4008-BC1A-E61FC68D200F}.Release|x86.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|ARM.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|ARM.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|ARM64.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|ARM64.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|x64.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|x64.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|x86.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Ad-Hoc|x86.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|ARM.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|ARM.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|ARM64.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|ARM64.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|x64.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|x64.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|x86.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.AppStore|x86.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|ARM.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|x64.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|ARM.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|ARM.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|ARM64.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|iPhone.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|x64.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|x64.Build.0 = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E040739-77F9-47AC-8F75-333FF889BB17}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -667,5 +714,16 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7D7BDCF-1D87-48DB-BA39-2416B03D622F}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{097bf4b3-cb50-4ca2-b7ef-92d37da4937a}*SharedItemsImports = 4
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{0f3c0664-bda6-4cd0-872a-49055994d1c6}*SharedItemsImports = 4
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{33a12b71-ac70-466d-ac01-89f38b2d5333}*SharedItemsImports = 4
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{3e76a7fa-2681-42da-9d96-2662768ac2ee}*SharedItemsImports = 4
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{58fa2526-a640-4e49-a22f-7cfd7e364215}*SharedItemsImports = 5
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{b160f0aa-6ad9-41c9-bed0-acd19f0ad6b7}*SharedItemsImports = 5
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{b91f036d-8f2f-4b05-bdee-bdc6f0bc78c0}*SharedItemsImports = 5
+		src\sample\DebugRainbowsSample\DebugRainbowsSample.Shared\DebugRainbowsSample.Shared.projitems*{fa9dbb96-7aeb-4172-aab3-56417fbfebfc}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal
