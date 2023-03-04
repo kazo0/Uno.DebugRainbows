@@ -23,7 +23,7 @@ namespace Uno.DebugRainbows
         public static readonly DependencyProperty ShowGridProperty =
             DependencyProperty.RegisterAttached("ShowGrid", typeof(bool), typeof(UIElement), new PropertyMetadata(false, OnShowDebugModeChanged));
 
-        static bool GetShowColors(DependencyObject obj)
+        public static bool GetShowColors(DependencyObject obj)
         {
             return (bool)obj.GetValue(ShowColorsProperty);
         }

@@ -41,12 +41,11 @@ namespace Uno.DebugRainbows
 			var info = e.Info;
 			var size = new Size(info.Width, info.Height);
 
-			var display = DisplayInformation.GetForCurrentView();
-			var scale = display.LogicalDpi / 96.0f;
-			var scaledSize = new SKSize((float)size.Width / scale, (float)size.Height / scale);
+			var scale = XamlRoot.RasterizationScale;
+			var scaledSize = new SKSize((float)((float)size.Width / scale), (float)((float)size.Height / scale));
 
 			// handle the device screen density
-			canvas.Scale(scale);
+			canvas.Scale((float)scale);
 
 			// make sure the canvas is blank
 			canvas.Clear();

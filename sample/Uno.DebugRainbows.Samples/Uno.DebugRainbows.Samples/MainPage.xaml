@@ -1,0 +1,30 @@
+<Page x:Class="Uno.DebugRainbows.Samples.MainPage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:local="using:Uno.DebugRainbows.Samples"
+	  xmlns:dbg="using:Uno.DebugRainbows"
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	  mc:Ignorable="d"
+	  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+	  dbg:DebugRainbow.ShowGrid="True"
+	  dbg:DebugRainbow.HorizontalItemsSize="20"
+	  dbg:DebugRainbow.VerticalItemsSize="20"
+	  dbg:DebugRainbow.MajorGridLineBrush="Red"
+	  dbg:DebugRainbow.MajorGridLineInterval="8"
+	  dbg:DebugRainbow.MajorGridLineOpacity=".5"
+	  dbg:DebugRainbow.MajorGridLineWidth="15"
+	  dbg:DebugRainbow.GridLineBrush="Red"
+	  dbg:DebugRainbow.GridLineOpacity=".5"
+	  dbg:DebugRainbow.GridLineWidth="5"
+	  dbg:DebugRainbow.GridOrigin="Center"
+	  dbg:DebugRainbow.MakeGridRainbows="False"
+	  dbg:DebugRainbow.Inverse="True">
+
+	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+		<TextBlock Text="Hello, Uno.DebugRainbows!"
+				   HorizontalAlignment="Center"
+				   VerticalAlignment="Center"
+				   FontSize="30" />
+	</Grid>
+</Page>
