@@ -6,7 +6,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 
-namespace Uno.DebugRainbows.Samples;
+namespace Uno.DebugRainbows.Sample;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.

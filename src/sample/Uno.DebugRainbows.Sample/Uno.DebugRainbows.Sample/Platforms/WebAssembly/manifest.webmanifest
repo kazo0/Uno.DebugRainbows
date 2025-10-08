@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "Uno.DebugRainbows.Sample",
+  "display": "standalone",
+  "name": "Uno.DebugRainbows.Sample",
+  "short_name": "Uno.DebugRainbows.Sample",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}
