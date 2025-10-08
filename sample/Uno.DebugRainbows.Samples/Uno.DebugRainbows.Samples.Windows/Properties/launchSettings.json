@@ -1,7 +1,0 @@
-{
-  "profiles": {
-    "Uno.DebugRainbows.Samples.Windows": {
-      "commandName": "MsixPackage"
-    }
-  }
-}
