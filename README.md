@@ -1,4 +1,5 @@
-<img src="assets/uno-debugrainbows.png"  width="50%" height="30%">
+
+![Debug Rainbows](https://raw.githubusercontent.com/kazo0/Uno.DebugRainbows/master/assets/uno-debugrainbows.png)
 
 # Uno DebugRainbows
 
