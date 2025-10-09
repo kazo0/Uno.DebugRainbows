@@ -94,6 +94,12 @@ jobs:
           fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
       # Build your artifacts/my-sdk.nupkg package here
     
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./artifacts
+
       # Get a short-lived NuGet API key
       - name: NuGet login (OIDC → temp API key)
         uses: NuGet/login@v1
@@ -135,7 +141,12 @@ jobs:
     
     steps:
       # Build your artifacts/my-sdk.nupkg package here
-    
+      - name: Download Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: nuget-packages
+          path: ./artifacts
+
       # Get a short-lived NuGet API key
       - name: NuGet login (OIDC → temp API key)
         uses: NuGet/login@v1
