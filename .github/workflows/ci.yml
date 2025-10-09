@@ -15,34 +15,35 @@ env:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    name: Build NuGet Packages
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: ${{ env.DotNetVersion }}
 
-    - name: 'OpenJDK'
-      shell: bash
-      run: |
-        ubuntu_release=`lsb_release -rs`
-        wget https://packages.microsoft.com/config/ubuntu/${ubuntu_release}/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-        sudo dpkg -i packages-microsoft-prod.deb
-        sudo apt-get install apt-transport-https
-        sudo apt-get update
-        sudo apt-get install -y msopenjdk-17
-        sudo update-java-alternatives --set msopenjdk-17-amd64
+    # - name: 'OpenJDK'
+    #   shell: bash
+    #   run: |
+    #     ubuntu_release=`lsb_release -rs`
+    #     wget https://packages.microsoft.com/config/ubuntu/${ubuntu_release}/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+    #     sudo dpkg -i packages-microsoft-prod.deb
+    #     sudo apt-get install apt-transport-https
+    #     sudo apt-get update
+    #     sudo apt-get install -y msopenjdk-17
+    #     sudo update-java-alternatives --set msopenjdk-17-amd64
     
-    - name: 'Select JDK 17'
-      shell: pwsh
-      run: |
-        echo "JAVA_HOME=$env:JAVA_HOME_17_X64" >> $env:GITHUB_ENV
-        echo "JavaSdkDirectory=$env:JAVA_HOME_17_X64" >> $env:GITHUB_ENV
+    # - name: 'Select JDK 17'
+    #   shell: pwsh
+    #   run: |
+    #     echo "JAVA_HOME=$env:JAVA_HOME_17_X64" >> $env:GITHUB_ENV
+    #     echo "JavaSdkDirectory=$env:JAVA_HOME_17_X64" >> $env:GITHUB_ENV
 
     - name: 'Uno Check'
       shell: pwsh
