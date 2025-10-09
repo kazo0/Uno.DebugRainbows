@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ "master", "release/**" ]
 
+env:
+  UnoCheckVersion: '1.32.17'
+  DotNetVersion: '9.0.305'
+
 jobs:
   build:
 
@@ -21,12 +25,39 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 9.0.x
+        dotnet-version: ${{ env.DotNetVersion }}
+
+    - name: 'OpenJDK'
+      shell: bash
+      run: |
+        ubuntu_release=`lsb_release -rs`
+        wget https://packages.microsoft.com/config/ubuntu/${ubuntu_release}/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+        sudo dpkg -i packages-microsoft-prod.deb
+        sudo apt-get install apt-transport-https
+        sudo apt-get update
+        sudo apt-get install -y msopenjdk-17
+        sudo update-java-alternatives --set msopenjdk-17-amd64
+    
+    - name: 'Select JDK 17'
+      shell: pwsh
+      run: |
+        echo "JAVA_HOME=$env:JAVA_HOME_17_X64" >> $env:GITHUB_ENV
+        echo "JavaSdkDirectory=$env:JAVA_HOME_17_X64" >> $env:GITHUB_ENV
+
+    - name: 'Uno Check'
+      shell: pwsh
+      run: |
+        & dotnet tool install --global Uno.Check --version $env:UnoCheckVersion
+        uno-check -v --ci --non-interactive --fix --skip androidemulator --skip dotnetnewunotemplates --skip unosdk
+      env:
+        JAVA_HOME: ${{ env.JAVA_HOME }}
+
     - uses: dotnet/nbgv@v0.4.2
       name: NBGV
       id: nbgv
       with:
         setAllVars: "true"
+
     - name: Generate Informational Version
       id: NBGV_InformationalVersion
       shell: pwsh
@@ -34,12 +65,85 @@ jobs:
         $InformationalVersion="${{ steps.nbgv.outputs.SemVer2 }}+${{ steps.nbgv.outputs.BuildingRef }}".Replace("refs/heads/","").Replace("/","-")
         echo "Informational Version: $InformationalVersion"
         echo "NBGV_InformationalVersion=$InformationalVersion" >> $GITHUB_ENV
+
     - name: Build Packages
+      shell: pwsh
       run: |
         $adjustedPackageVersion="${{ steps.nbgv.outputs.SemVer2 }}".ToLower();
-        dotnet build src/Uno.DebugRainbows/Uno.DebugRainbows.csproj -c Release -p:PackageVersion=$adjustedPackageVersion -p:Version=${{ steps.nbgv.outputs.SimpleVersion }} /bl:./artifacts/debugrainbows-pack.binlog -o ./artifacts
+
+        dotnet build src/Uno.DebugRainbows/Uno.DebugRainbows.csproj -c Release -p:GeneratePackageOnBuild=true -p:PackageVersion=$adjustedPackageVersion -p:Version=${{ steps.nbgv.outputs.SimpleVersion }} /bl:./artifacts/debugrainbows-pack.binlog -o ./artifacts/
+
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
       with:
         name: nuget-packages
         path: ./artifacts
+
+  publish-nuget-release:
+    name: "Publish to NuGet.org (stable)"
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release/') }}
+    environment: production
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
+    
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+      # Build your artifacts/my-sdk.nupkg package here
+    
+      # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+    
+      # Push the package
+      - name: NuGet push
+        run: dotnet nuget push artifacts/*.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DotNetVersion }}
+
+      - uses: dotnet/nbgv@v0.4.2
+        name: NBGV
+        id: nbgv
+        with:
+          setAllVars: "true"
+
+      - name: "Tag and push to GitHub"
+        shell: pwsh
+        run: |
+          git config user.email "steve.bilogan@gmail.com"
+          git config user.name "Steve DevOps"
+          git tag $env:NBGV_SemVer2
+          git push origin $env:NBGV_SemVer2
+
+  publish-nuget-dev:
+    name: "Publish to NuGet.org (-dev)"
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    environment: dev
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance for this job
+    
+    steps:
+      # Build your artifacts/my-sdk.nupkg package here
+    
+      # Get a short-lived NuGet API key
+      - name: NuGet login (OIDC → temp API key)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      # Push the package
+      - name: NuGet push
+        run: dotnet nuget push artifacts/*.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+    
