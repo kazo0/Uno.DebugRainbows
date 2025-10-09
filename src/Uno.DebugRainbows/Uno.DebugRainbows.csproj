@@ -1,36 +1,46 @@
-<Project Sdk="Uno.Sdk">
-  <PropertyGroup>
-	<TargetFrameworks>net9.0;net9.0-ios;net9.0-android</TargetFrameworks>
-	<TargetFrameworks Condition="($([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true')">$(TargetFrameworks);net9.0-windows10.0.26100</TargetFrameworks>
-	<UnoSingleProject>true</UnoSingleProject>
-	<OutputType>Library</OutputType>
-	<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
-	<GenerateLibraryLayout>true</GenerateLibraryLayout>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<Nullable>enable</Nullable>
-	<PackageId>DebugRainbows.Uno</PackageId>
-	<!--
-	  UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
-	  https://aka.platform.uno/singleproject-features
-	-->
-	
-	<UnoFeatures>
-		Skia;
-	</UnoFeatures>
-  </PropertyGroup>
+﻿<Project Sdk="Uno.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net9.0;net9.0-ios;net9.0-android</TargetFrameworks>
+		<TargetFrameworks Condition="($([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true')">$(TargetFrameworks);net9.0-windows10.0.26100</TargetFrameworks>
+		<UnoSingleProject>true</UnoSingleProject>
+		<OutputType>Library</OutputType>
+		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageId>DebugRainbows.Uno</PackageId>
 
-  <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">
-	<!--
-	If you encounter this error message:
+		<UnoFeatures>
+			Skia;
+		</UnoFeatures>
 
-	  error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
-	  Please update to a newer .NET SDK in order to reference this assembly.
+		<Authors>Steve Bilogan</Authors>
 
-	This means that the two packages below must be aligned with the "build" version number of
-	the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
-	must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
-	-->
-	<!-- <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22621.28" />
-	<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22621.28" /> -->
-  </ItemGroup>
+		<Title>Uno Platform Debug Rainbows</Title>
+
+		<Description>An Uno Platform port of Steven Thewissen's Xamarin.Forms.DebugRainbows</Description>
+
+		<PackageProjectUrl>https://github.com/kazo0/Uno.DebugRainbows</PackageProjectUrl>
+
+		<PackageIcon>uno-debugrainbows.png</PackageIcon>
+
+		<RepositoryUrl>https://github.com/kazo0/Uno.DebugRainbows</RepositoryUrl>
+
+		<RepositoryType>git</RepositoryType>
+
+		<PackageTags>uno;uno-platform;debug;rainbows</PackageTags>
+
+		<Copyright>Copyright © 2025 Steve Bilogan</Copyright>
+
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\assets\uno-debugrainbows.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 </Project>

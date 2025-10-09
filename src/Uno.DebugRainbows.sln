@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EBA6F678-0E31-42BA-97F3-5B5F5C886246}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uno.DebugRainbows.Sample", "sample\Uno.DebugRainbows.Sample\Uno.DebugRainbows.Sample\Uno.DebugRainbows.Sample.csproj", "{87CA9AC2-FEC3-DD65-A855-4ED5E93D7906}"
