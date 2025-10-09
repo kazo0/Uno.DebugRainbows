@@ -10,14 +10,11 @@ public static partial class DebugRainbow
 
 	private static void OnTomatoChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
 	{
-#if DEBUG
 		IterateChildren(dependencyObject as UIElement, tomato: (bool)args.NewValue);
-#endif
 	}
 
 	private static void OnShowDebugModeChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
 	{
-#if DEBUG
 		var showGrid = GetShowGrid(dependencyObject);
 		var showColors = GetShowColors(dependencyObject);
 
@@ -41,22 +38,18 @@ public static partial class DebugRainbow
 				fe.SizeChanged -= Element_SizeChanged;
 			}
 		}
-#endif
 	}
 
 	private static void Element_SizeChanged(object sender, SizeChangedEventArgs args)
 	{
-#if DEBUG
 		if (sender is Page page)
 		{
 			BuildGrid(page);
 		}
-#endif
 	}
 
 	private static void Element_Loaded(object sender, RoutedEventArgs e)
 	{
-#if DEBUG
 		if (GetShowColors(sender as DependencyObject))
 		{
 			IterateChildren(sender as UIElement);
@@ -69,7 +62,6 @@ public static partial class DebugRainbow
 				BuildGrid(page);
 			}
 		}
-#endif
 	}
 
 	private static void IterateChildren(UIElement element, bool tomato = false)
