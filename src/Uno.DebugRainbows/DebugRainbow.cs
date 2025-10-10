@@ -76,10 +76,10 @@ public static partial class DebugRainbow
 		{
 			panel.Background = GetColor();
 
-			//foreach (var child in panel.all)
-			//{
-			//	IterateChildren(child, tomato);
-			//}
+			foreach (var child in panel.Children)
+			{
+				IterateChildren(child, tomato);
+			}
 		}
 #if HAS_UNO
 		else if (element is FrameworkElement fe)

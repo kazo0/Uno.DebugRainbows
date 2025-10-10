@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Uno.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>net9.0;net9.0-ios;net9.0-android</TargetFrameworks>
+		<TargetFrameworks>net9.0;net9.0-ios;net9.0-android;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
 		<TargetFrameworks Condition="($([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true')">$(TargetFrameworks);net9.0-windows10.0.26100</TargetFrameworks>
 		<UnoSingleProject>true</UnoSingleProject>
 		<OutputType>Library</OutputType>
