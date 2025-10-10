@@ -72,7 +72,7 @@ jobs:
       run: |
         $adjustedPackageVersion="${{ steps.nbgv.outputs.SemVer2 }}".ToLower();
 
-        dotnet build src/Uno.DebugRainbows/Uno.DebugRainbows.csproj -c Release -p:GeneratePackageOnBuild=true -p:PackageVersion=$adjustedPackageVersion -p:Version=${{ steps.nbgv.outputs.SimpleVersion }} /bl:./artifacts/debugrainbows-pack.binlog -o ./artifacts/
+        dotnet build src/Uno.DebugRainbows/Uno.DebugRainbows.csproj /r /v:m /m:4 -c Release -p:GeneratePackageOnBuild=true -p:PackageVersion=$adjustedPackageVersion -p:Version=${{ steps.nbgv.outputs.SimpleVersion }} /bl:./artifacts/debugrainbows-pack.binlog -o ./artifacts/
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
