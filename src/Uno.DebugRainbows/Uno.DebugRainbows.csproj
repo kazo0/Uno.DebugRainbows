@@ -1,7 +1,12 @@
 ﻿<Project Sdk="Uno.Sdk">
-	<PropertyGroup>
+    <PropertyGroup Condition="'$(TargetFrameworkOverride)'!=''">
+		<TargetFrameworks>$(TargetFrameworkOverride)</TargetFrameworks>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFrameworkOverride)'==''">
 		<TargetFrameworks>net9.0;net9.0-ios;net9.0-android;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
 		<TargetFrameworks Condition="($([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true')">$(TargetFrameworks);net9.0-windows10.0.26100</TargetFrameworks>
+	</PropertyGroup>
+	<PropertyGroup>
 		<UnoSingleProject>true</UnoSingleProject>
 		<OutputType>Library</OutputType>
 		<!-- Ensures the .xr.xml files are generated in a proper layout folder -->
@@ -11,6 +16,7 @@
 
 		<UnoFeatures>
 			Skia;
+			SkiaRenderer;
 		</UnoFeatures>
 
 		<PackageId>DebugRainbows.Uno</PackageId>
